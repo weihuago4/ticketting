@@ -16,3 +16,19 @@ build:
         manual:
           - src: 'src/**/*.ts'
             dest: .
+    - image: marcotune/ticketing-client
+      context: ticketing-client
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: '**/*.js'
+            dest: .
+    - image: marcotune/tickets
+      context: tickets
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: 'src/**/*.ts'
+            dest: .

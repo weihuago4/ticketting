@@ -1,4 +1,4 @@
-FROM node:alpine
+FROM node:latest
 
 ENV CI=true
 
@@ -7,4 +7,4 @@ COPY package.json .
 RUN npm install --registry=https://registry.npm.taobao.org --only=prod
 COPY . .
 
-CMD ["npm", "start"]
+CMD ["npm", "run", "dev"]
